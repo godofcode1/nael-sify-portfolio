@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nael Sify | Full Stack Developer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page-shell">
+        <header class="site-header">
+            <a class="brand" href="#top" aria-label="Nael Sify home">NS</a>
+            <nav class="site-nav" aria-label="Primary navigation">
+                <a href="#work">Work</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
+
+        <main id="top">
+            <section class="hero-section">
+                <div class="hero-copy">
+                    <p class="eyebrow">Full Stack Developer / Creative Technologist</p>
+                    <h1>Building clean digital products with code, design, and reliable execution.</h1>
+                    <p class="hero-text">
+                        I am Nael Sify, a Casablanca-based developer focused on practical web apps,
+                        polished interfaces, automation, and secure back-end systems.
+                    </p>
+                    <div class="hero-actions">
+                        <a class="button primary" href="mailto:nael.sify@gmail.com">Start a project</a>
+                        <a class="button secondary" href="#work">View work</a>
+                    </div>
+                </div>
+
+                <aside class="profile-panel" aria-label="Profile summary">
+                    <p class="panel-label">Available for selected projects</p>
+                    <h2>Nael Sify</h2>
+                    <p>Python Developer, Designer, Artist, and technology enthusiast.</p>
+                    <div class="profile-links">
+                        <a href="tel:+212620852011">0620852011</a>
+                        <a href="mailto:nael.sify@gmail.com">nael.sify@gmail.com</a>
+                    </div>
+                </aside>
+            </section>
+
+            <section class="metrics-strip" aria-label="Highlights">
+                {% for stat in stats %}
+                <div>
+                    <strong>{{ stat.value }}</strong>
+                    <span>{{ stat.label }}</span>
+                </div>
+                {% endfor %}
+            </section>
+
+            <section class="section-block" id="work">
+                <div class="section-heading">
+                    <p class="eyebrow">Selected Work</p>
+                    <h2>Website concepts shaped for brands, bookings, and real users.</h2>
+                </div>
+
+                <div class="project-grid">
+                    {% for project in projects %}
+                    <article class="project-card">
+                        <span class="project-index">{{ project.id }}</span>
+                        <h3>{{ project.title }}</h3>
+                        <p class="project-desc">{{ project.desc }}</p>
+                        <div class="tag-row">
+                            {% for tag in project.tags %}
+                            <span>{{ tag }}</span>
+                            {% endfor %}
+                        </div>
+                        <div class="project-actions">
+                            <a href="{{ project.live_url }}" target="_blank" rel="noopener noreferrer">Open website</a>
+                            <a href="{{ project.repo_url }}" target="_blank" rel="noopener noreferrer">Source</a>
+                        </div>
+                    </article>
+                    {% endfor %}
+                </div>
+            </section>
+
+            <section class="section-block services-block" id="services">
+                <div class="section-heading">
+                    <p class="eyebrow">Services</p>
+                    <h2>What I can help you ship.</h2>
+                </div>
+
+                <div class="service-grid">
+                    {% for service in services %}
+                    <article class="service-item">
+                        <h3>{{ service.title }}</h3>
+                        <p>{{ service.desc }}</p>
+                    </article>
+                    {% endfor %}
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer" id="contact">
+            <div>
+                <p class="eyebrow">Contact</p>
+                <h2>Have an idea worth building?</h2>
+            </div>
+            <a class="button primary" href="mailto:nael.sify@gmail.com">nael.sify@gmail.com</a>
+        </footer>
+    </div>
+
+</body>
+</html>
