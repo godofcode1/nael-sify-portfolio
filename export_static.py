@@ -10,6 +10,9 @@ OUT_DIR = ROOT / "dist"
 
 def build() -> None:
     if OUT_DIR.exists():
+        git_dir = OUT_DIR / ".git"
+        if git_dir.exists():
+            shutil.rmtree(git_dir, ignore_errors=True)
         shutil.rmtree(OUT_DIR)
 
     (OUT_DIR / "static").mkdir(parents=True, exist_ok=True)
