@@ -312,7 +312,10 @@ h1 {
 }
 
 .project-card:nth-child(2),
-.project-card:nth-child(3) {
+.project-card:nth-child(3),
+.project-card:nth-child(5),
+.project-card:nth-child(6),
+.project-card:nth-child(7) {
     grid-column: span 3;
 }
 
