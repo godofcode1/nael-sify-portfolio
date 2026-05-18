@@ -1,5 +1,6 @@
 from pathlib import Path
 import shutil
+import stat
 
 from app import app, MY_PROJECTS, SERVICES, STATS
 
@@ -8,13 +9,27 @@ ROOT = Path(__file__).resolve().parent
 OUT_DIR = ROOT / "dist"
 
 
-def build() -> None:
-    if OUT_DIR.exists():
-        git_dir = OUT_DIR / ".git"
-        if git_dir.exists():
-            shutil.rmtree(git_dir, ignore_errors=True)
-        shutil.rmtree(OUT_DIR)
+def _clear_readonly(func, path, _exc_info) -> None:
+    Path(path).chmod(stat.S_IWRITE)
+    func(path)
 
+
+def _reset_output_dir() -> None:
+    if not OUT_DIR.exists():
+        OUT_DIR.mkdir(parents=True, exist_ok=True)
+        return
+
+    for child in OUT_DIR.iterdir():
+        if child.name == ".git":
+            continue
+        if child.is_dir():
+            shutil.rmtree(child, onexc=_clear_readonly)
+        else:
+            child.unlink()
+
+
+def build() -> None:
+    _reset_output_dir()
     (OUT_DIR / "static").mkdir(parents=True, exist_ok=True)
 
     with app.test_request_context("/"):

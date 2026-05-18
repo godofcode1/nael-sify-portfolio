@@ -34,11 +34,27 @@ MY_PROJECTS = [
         "tags": ["Travel", "Listings", "UX"],
         "live_url": "https://godofcode1.github.io/casastay-rentals/",
         "repo_url": "https://github.com/godofcode1/casastay-rentals"
+    },
+    {
+        "id": "005",
+        "title": "Sable & Steam Cafe",
+        "desc": "A coffee and patisserie concept with signature drinks, pastry showcases, daily rhythm, and a warm boutique identity designed to feel premium and inviting.",
+        "tags": ["Coffee", "Patisserie", "Branding"],
+        "live_url": "https://godofcode1.github.io/sable-and-steam-cafe/",
+        "repo_url": "https://github.com/godofcode1/sable-and-steam-cafe"
+    },
+    {
+        "id": "006",
+        "title": "Atelier Du Feu",
+        "desc": "A restaurant landing page built around chef storytelling, reservation conversion, tasting menus, and a richer editorial presentation for hospitality brands.",
+        "tags": ["Restaurant", "Fine Dining", "Editorial"],
+        "live_url": "https://godofcode1.github.io/atelier-du-feu/",
+        "repo_url": "https://github.com/godofcode1/atelier-du-feu"
     }
 ]
 
 STATS = [
-    {"value": "4", "label": "featured website concepts"},
+    {"value": "6", "label": "featured website concepts"},
     {"value": "4", "label": "core skill areas"},
     {"value": "2026", "label": "current portfolio refresh"}
 ]
