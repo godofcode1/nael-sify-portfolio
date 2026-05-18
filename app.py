@@ -50,11 +50,19 @@ MY_PROJECTS = [
         "tags": ["Restaurant", "Fine Dining", "Editorial"],
         "live_url": "https://godofcode1.github.io/atelier-du-feu/",
         "repo_url": "https://github.com/godofcode1/atelier-du-feu"
+    },
+    {
+        "id": "007",
+        "title": "Kairo Sushi House",
+        "desc": "A sushi restaurant concept with omakase storytelling, signature rolls, chef-led trust signals, and a refined dark editorial style built for premium dining brands.",
+        "tags": ["Sushi", "Omakase", "Hospitality"],
+        "live_url": "https://godofcode1.github.io/kairo-sushi-house/",
+        "repo_url": "https://github.com/godofcode1/kairo-sushi-house"
     }
 ]
 
 STATS = [
-    {"value": "6", "label": "featured website concepts"},
+    {"value": "7", "label": "featured website concepts"},
     {"value": "4", "label": "core skill areas"},
     {"value": "2026", "label": "current portfolio refresh"}
 ]
